@@ -13,7 +13,7 @@ div.textbox {
     left: 5%;
     height: 80%;
     width: 50%;
-    background: linear-gradient(45deg, rgba(0, 40, 60, 0.85), rgba(0, 40, 60, 0.85), rgba(150, 229, 255, 0.538), rgba(0, 40, 60, 0.85));
+    background: linear-gradient(45deg, rgba(0, 40, 60, 0.85), rgba(0, 40, 60, 0.85), rgba(96, 115, 121, 0.538), rgba(0, 40, 60, 0.85));
     border-radius: 10px;
     color: aliceblue;
     padding: 15px;
