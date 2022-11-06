@@ -152,3 +152,8 @@ div.text {
     justify-self: center;
     border-radius: 1em;
 }
+
+canvas {
+    width: 100%;
+    height: 100%;
+}

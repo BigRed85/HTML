@@ -20,8 +20,7 @@ const camera = new THREE.PerspectiveCamera(10, aspect, 0.1, 1000);
 
 //set up the renderer and add the canvas to the html doc
 const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
-//renderer.setPixelRatio( window.devicePixelRatio );
+renderer.setSize( 1920, 1080, false );
 document.body.appendChild( renderer.domElement );
 
 // -------------------- LIGHTING ----------------------------
@@ -277,7 +276,7 @@ function initUI() {
 
     let instruction_text = document.createElement("div");
     instruction_text.id = "instruction_text";
-    instruction_text.innerText = 'Use [W], [A], [S], [D] keys to move the rocket ship. \nNote: this is a work in progress and many elements are not fully working or are in the process of being made. \nThis site dose not yet woke with mobile devices, and is best viewed in Crome or Firefox. \nIf the app is running slow use [Ctrl]+[=] to lover resolution.';
+    instruction_text.innerText = 'Use [W], [A], [S], [D] keys to move the rocket ship. \nNote: this is a work in progress and many elements are not fully working or are in the process of being made. \nThis site dose not yet woke with mobile devices, and is best viewed in Crome or Firefox.';
     player_UI.appendChild(instruction_text);
 
     let interaction_text = document.createElement("div");
@@ -343,7 +342,7 @@ function resizeWindow() //need to deal with skybox and partical textures!!!!
     camera.aspect = aspect;
     camera.updateProjectionMatrix();
 
-    renderer.setSize( window.innerWidth, window.innerHeight );
+    //renderer.setSize( window.innerWidth, window.innerHeight );
 
     initBackground();
 }
