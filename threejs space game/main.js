@@ -19,7 +19,7 @@ const camera_ortho = new THREE.OrthographicCamera(-displayHight * aspect, displa
 const camera = new THREE.PerspectiveCamera(10, aspect, 0.1, 1000);
 
 //set up the renderer and add the canvas to the html doc
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setSize( 1920, 1080, false );
 document.body.appendChild( renderer.domElement );
 
@@ -248,14 +248,16 @@ function init ()
         grid.vertices.push( GLOBALS.maxX, 0.0, z);
     }
 
-    scene.add(logo_cloud.object);
-
-    //add the interactive objects
-    initInteractives();
+    
     
     grid.geometry.setAttribute('position', new THREE.Float32BufferAttribute( grid.vertices, 3))
     const gridLines = new THREE.LineSegments(grid.geometry, grid.material);
     scene.add(gridLines);
+
+    scene.add(logo_cloud.object);
+
+    //add the interactive objects
+    initInteractives();
 
     //set up user interactions
     document.addEventListener('keydown', onKeyDown);
@@ -334,10 +336,6 @@ function initBackground()
 function resizeWindow() //need to deal with skybox and partical textures!!!!
 {
     aspect = window.innerWidth/window.innerHeight;
-
-    camera_ortho.left = -displayHight * aspect;
-    camera_ortho.right = displayHight * aspect;
-    camera_ortho.updateProjectionMatrix();
     
     camera.aspect = aspect;
     camera.updateProjectionMatrix();
